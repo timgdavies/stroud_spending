@@ -26,7 +26,7 @@ from datetime import datetime
 # called "data.sqlite" in the current working directory which has at least a table
 # called "data".
 
-html = requests.get("https://www.stroud.gov.uk/council/opendata/council-expenditure-over-500").text
+html = requests.get("https://www.stroud.gov.uk/council/opendata/council-expenditure-over-500",verify=False).text
 
 soup = BeautifulSoup(html, 'html.parser')
 
@@ -35,7 +35,7 @@ for a in soup.find_all('a'):
         url = "https://www.stroud.gov.uk" + a.get('href')
         print url
         try:
-            with closing(requests.get(url, stream=True)) as r:
+            with closing(requests.get(url, stream=True,verify=False)) as r:
                 f = (line for line in r.iter_lines())
                 headers = ["Supplier Name","Company No","Responsible Unit","Expenses Code","Date Paid","Transaction Number","Amount","Service Area Categorisation"]
 
