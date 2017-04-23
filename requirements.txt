@@ -1,9 +1,10 @@
-# It's easy to add more libraries or choose different versions. Any libraries
-# specified here will be installed and made available to your morph.io scraper.
-# Find out more: https://morph.io/documentation/python
-
-# Custom version of scraperwiki library
--e git+http://github.com/openaustralia/scraperwiki-python.git@morph_defaults#egg=scraperwiki
-
-lxml==3.4.4
+beautifulsoup4==4.5.3
+bs4==0.0.1
 cssselect==0.9.1
+dumptruck==0.1.6
+lxml==3.4.4
+python-dateutil==2.6.0
+requests==2.13.0
+-e git+http://github.com/openaustralia/scraperwiki-python.git@732dda1982a3b2073f6341a6a24f9df1bda77fa0#egg=scraperwiki
+six==1.10.0
+wheel==0.26.0
