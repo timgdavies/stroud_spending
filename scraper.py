@@ -54,7 +54,6 @@ for a in soup.find_all('a'):
                         del(row['remove'])
                     except Exception:
                         pass
-                    print row
                     try:
                         scraperwiki.sqlite.save(unique_keys=['hash'],data=row,table_name='data')
                     except Exception as e:
